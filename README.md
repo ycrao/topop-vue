@@ -26,10 +26,13 @@ pnpm test:e2e:dev
 # git-hook husky, see https://typicode.github.io/husky/#/?id=manual
 pnpm dlx husky-init && pnpm install # pnpm
 
-# commitizen
-pnpm install commitizen -D
-pnpm install cz-conventional-changelog -D
-pnpm install cz-customizable -D
+# commitizen & commitlint
+pnpm install commitizen cz-conventional-changelog cz-customizable -D
+pnpm install @commitlint/cli @commitlint/config-conventional -D
+# using git-cz by npx
 npx git-cz
+# or by pnpm dlx
 pnpm dlx git-cz
+
+
 ```
