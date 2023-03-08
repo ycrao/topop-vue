@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "git-cz": "git-cz",
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",

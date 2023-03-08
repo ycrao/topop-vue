@@ -29,10 +29,17 @@ pnpm dlx husky-init && pnpm install # pnpm
 # commitizen & commitlint
 pnpm install commitizen cz-conventional-changelog cz-customizable -D
 pnpm install @commitlint/cli @commitlint/config-conventional -D
-# using git-cz by npx
-npx git-cz
-# or by pnpm dlx
+git add something
+# using global git-cz by pnpm dlx
 pnpm dlx git-cz
+# using git-cz in project
+pnpm git-cz
+./node_modules/.bin/git-cz
 
+# commit message style, see .cz-config.js and https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+# type(scope?): subject
+git commit -m "chore(deps): add commitlint"
 
+# check message style
+echo "chore(deps): add commitlint" | ./node_modules/.bin/commitlint
 ```

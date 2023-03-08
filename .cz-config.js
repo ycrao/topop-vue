@@ -3,7 +3,7 @@ module.exports = {
   types: [
     { value: 'feat', name: 'feat:     新增产品功能' },
     { value: 'fix', name: 'fix:      修复 bug' },
-    { value: 'upd', name: 'upd:      更新某功能（不是 feat, 不是 fix）' },
+    { value: 'update', name: 'update:      更新某功能（不是 feat, 不是 fix）' },
     { value: 'docs', name: 'docs:     文档的变更' },
     { value: 'release', name: 'release:     版本，打 tag' },
     {
