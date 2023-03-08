@@ -23,9 +23,11 @@ pnpm test:unit
 # e2e test
 pnpm test:e2e:dev
 
-# git hook
-npx husky-init && npm install       # npm
-npx husky-init && yarn              # Yarn 1
-yarn dlx husky-init --yarn2 && yarn # Yarn 2+
+# git-hook husky, see https://typicode.github.io/husky/#/?id=manual
 pnpm dlx husky-init && pnpm install # pnpm
+
+# commitizen
+pnpm install commitizen -D
+pnpm install cz-conventional-changelog -D
+pnpm install cz-customizable -D
 ```
