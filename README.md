@@ -30,4 +30,6 @@ pnpm dlx husky-init && pnpm install # pnpm
 pnpm install commitizen -D
 pnpm install cz-conventional-changelog -D
 pnpm install cz-customizable -D
+npx git-cz
+pnpm dlx git-cz
 ```
