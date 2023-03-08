@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { types, scopes  } from './.cz-config'
+// @ts-ignore
+import { types, scopes } from './.cz-config'
 
 const Configuration = {
   /*
@@ -7,7 +8,6 @@ const Configuration = {
    * Referenced packages must be installed
    */
   extends: ['@commitlint/config-conventional'],
-
   /*
    * Resolve and load @commitlint/format from node_modules.
    * Referenced package must be installed
@@ -30,13 +30,13 @@ const Configuration = {
     'subject-full-stop': [2, 'never', '.'],
     'type-case': [2, 'always', 'lower-case'],
     'type-empty': [2, 'never'],
-    'type-enum': [2, 'always', types.map((i) => i.value)],
+    'type-enum': [2, 'always', types.map((i: { value: any; }) => i.value)],
     // 'scope-enum': [2, 'always', scopes.map((i) => i.value)]
   },
   /*
    * Functions that return true if commitlint should ignore the given message.
    */
-  ignores: [(commit) => commit === ''],
+  ignores: [(commit: string) => commit === ''],
   /*
    * Whether commitlint uses the default ignore rules.
    */

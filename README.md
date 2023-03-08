@@ -43,3 +43,15 @@ git commit -m "chore(deps): add commitlint"
 # check message style
 echo "chore(deps): add commitlint" | ./node_modules/.bin/commitlint
 ```
+
+### reference
+
+- [vite](https://vitejs.dev/)
+- [vue 3](https://vuejs.org/)
+- [VSCode](https://code.visualstudio.com/) with [Volar](https://github.com/johnsoncodehk/volar) extension.
+- [Cypress](https://www.cypress.io/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Vue Test Utils](https://test-utils.vuejs.org/) 
+- [Vue Dev Tools](https://github.com/vuejs/devtools)
+- more see [Awesome Vue](https://github.com/vuejs/awesome-vue)
