@@ -7,7 +7,7 @@ import router from './router'
 import './assets/index.less'
 
 // 桌面端适配
-import '@vant/touch-emulator';
+import '@vant/touch-emulator'
 
 /* --------------------------------
 Vant 中有个别组件是以函数的形式提供的，

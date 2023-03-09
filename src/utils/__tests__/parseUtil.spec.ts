@@ -13,6 +13,6 @@ describe('URLParam', () => {
     const searchStr = `?a=1&b=2&c=3&a=2`
     const params = parseQuery(searchStr)
     expect(params.get('a')).toEqual('1')
-    expect(params.getAll('a')).toEqual(['1','2'])
+    expect(params.getAll('a')).toEqual(['1', '2'])
   })
 })

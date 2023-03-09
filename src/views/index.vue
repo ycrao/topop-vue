@@ -1,24 +1,15 @@
 <script setup lang="ts">
-
 import { ref, watch } from 'vue'
 import { useThemeStore } from '@/stores/theme'
-import { LocalStorageCache } from '@/utils/cache'
 
-
-const cache = new LocalStorageCache()
-const sKey = 'theme'
-const themeInCache = cache.get(sKey)
 const store = useThemeStore()
-const checked = ref<boolean>(themeInCache === 'dark')
+const checked = ref<boolean>(store.theme === 'dark')
 
-
-watch(checked,(val) => {
+watch(checked, (val) => {
   if (val) {
     store.setTheme('dark')
-    cache.set(sKey, 'dark')
   } else {
     store.setTheme('light')
-    cache.set(sKey, 'light')
   }
 })
 </script>

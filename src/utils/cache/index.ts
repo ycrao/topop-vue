@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 
 interface ICache {
-  get: (sKey: string) => string|null|undefined,
+  get: (sKey: string) => string | null | undefined
   set: (sKey: string, sData: any) => void
   remove: (sKey: string) => void
 }
@@ -18,7 +18,6 @@ class CookieCache implements ICache {
   remove(sKey: string) {
     return Cookies.remove(sKey, {})
   }
-
 }
 
 class LocalStorageCache implements ICache {
@@ -35,7 +34,4 @@ class LocalStorageCache implements ICache {
   }
 }
 
-export {
-  CookieCache,
-  LocalStorageCache,
-}
+export { CookieCache, LocalStorageCache }

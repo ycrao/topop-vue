@@ -1,6 +1,5 @@
-import axios from "axios"
-import { Toast } from "vant"
-
+import axios from 'axios'
+import { Toast } from 'vant'
 
 const baseApiUrl = import.meta.env.VUE_APP_BASE_API_URL as string
 
@@ -8,7 +7,6 @@ const request = axios.create({
   baseURL: baseApiUrl,
   timeout: 60000
 })
-
 
 request.interceptors.request.use(
   (config) => {

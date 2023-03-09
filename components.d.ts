@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     VanCellGroup: typeof import('vant/es')['CellGroup']
     VanConfigProvider: typeof import('vant/es')['ConfigProvider']
     VanList: typeof import('vant/es')['List']
+    VanNavBar: typeof import('vant/es')['NavBar']
     VanSwitch: typeof import('vant/es')['Switch']
     VantCell: typeof import('vant/es')['tCell']
     VantSwitch: typeof import('vant/es')['tSwitch']

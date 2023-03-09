@@ -1,30 +1,51 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { fetchZhihuHot } from '@/api/zhihu'
+import { useRouter } from "vue-router";
+const items = ref<object[]>([])
+const loading = ref(false)
+const finished = ref(false)
 
-import { ref } from 'vue';
-const list = ref<number[]>([]);
-const loading = ref(false);
-const finished = ref(false);
-
+const router = useRouter()
 const onLoad = () => {
-  // 异步更新数据
-  // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-  setTimeout(() => {
-    for (let i = 0; i < 10; i++) {
-      list.value.push(list.value.length + 1);
-    }
-
-    // 加载状态结束
-    loading.value = false;
-
-    // 数据全部加载完成
-    if (list.value.length >= 40) {
-      finished.value = true;
-    }
-  }, 1000);
-};
+  fetchZhihuHot().then(resp => {
+    items.value = resp.data
+    loading.value = false
+    finished.value = true
+  })
+}
+const onClickLeft = () => {
+  router.push({path: '/'})
+}
 </script>
 
 <template>
   <div class="container">
+    <div class="header">
+      <van-nav-bar title="知乎热榜"
+                   left-text="返回"
+                   left-arrow
+                   @click-left="onClickLeft" />
+    </div>
+    <div class="itemContainer">
+      <van-list
+        v-model:loading="loading"
+        :finished="finished"
+        finished-text="没有更多了"
+        @load="onLoad"
+      >
+        <van-cell v-for="item in items" :key="item.id" :title="item.title" :url="item.url" is-link />
+      </van-list>
+    </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+:deep(html) {
+  background-color: var(--van-background) !important;
+}
+.container {
+  margin: 10px auto;
+  width: 480px;
+}
+</style>
