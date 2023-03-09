@@ -42,6 +42,13 @@ git commit -m "chore(deps): add commitlint"
 
 # check message style
 echo "chore(deps): add commitlint" | ./node_modules/.bin/commitlint
+
+# stylelint
+# using scss see: https://stylelint.io/user-guide/get-started
+pnpm install stylelint stylelint-config-standard-scss -D
+# using less
+pnpm install stylelint stylelint-less stylelint-config-recommended-less -D
+# rules see: https://stylelint.io/user-guide/rules
 ```
 
 ### reference

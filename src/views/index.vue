@@ -1,0 +1,47 @@
+<script setup lang="ts">
+
+import { ref, watch } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+import { LocalStorageCache } from '@/utils/cache'
+
+
+const cache = new LocalStorageCache()
+const sKey = 'theme'
+const themeInCache = cache.get(sKey)
+const store = useThemeStore()
+const checked = ref<boolean>(themeInCache === 'dark')
+
+
+watch(checked,(val) => {
+  if (val) {
+    store.setTheme('dark')
+    cache.set(sKey, 'dark')
+  } else {
+    store.setTheme('light')
+    cache.set(sKey, 'light')
+  }
+})
+</script>
+
+<template>
+  <div class="container">
+    <van-cell-group title="应用列表">
+      <van-cell center title="🌗 暗黑模式">
+        <template #right-icon>
+          <van-switch v-model="checked" size="18px" />
+        </template>
+      </van-cell>
+      <van-cell title="知乎热榜" to="zhihu/hot" is-link />
+    </van-cell-group>
+  </div>
+</template>
+
+<style lang="less" scoped>
+.container {
+  min-width: 480px;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 30px;
+  position: relative;
+}
+</style>
