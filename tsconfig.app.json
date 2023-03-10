@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "mockProdServer.ts", "components.d.ts", "src/**/*", "src/**/*.vue", "types/*.d.ts", "mock/**/*"],
+  "include": ["env.d.ts", "mockProdServer.ts", "components.d.ts", "src/**/*", "src/**/*.vue", "types/*.d.ts", "mock/**/*", "mock/**/*.json"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

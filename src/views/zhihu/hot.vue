@@ -8,6 +8,7 @@ const finished = ref(false)
 
 const router = useRouter()
 const onLoad = () => {
+  loading.value = true
   fetchZhihuHot().then((resp) => {
     items.value = resp.data
     loading.value = false
@@ -44,11 +45,14 @@ const onClickLeft = () => {
 </template>
 
 <style lang="less" scoped>
-:deep(html) {
+:deep(body) {
   background-color: var(--van-background) !important;
 }
 .container {
-  margin: 10px auto;
-  width: 480px;
+  margin: 0 auto;
+  min-width: 320px;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 </style>

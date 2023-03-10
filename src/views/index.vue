@@ -29,7 +29,7 @@ watch(checked, (val) => {
 
 <style lang="less" scoped>
 .container {
-  min-width: 480px;
+  min-width: 320px;
   width: 100vw;
   height: 100vh;
   padding-top: 30px;
