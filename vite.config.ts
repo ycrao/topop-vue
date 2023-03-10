@@ -48,12 +48,12 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       host: true,
       open: true,
       proxy: {
-        '/short-api': {
+        '/i-culture-api': {
           // target: 'https://jsonplaceholder.typicode.com',
           // target: VITE_APP_PROXY_API_TARGET,
           target: 'https://api.iculture.cc',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/short-api/, 'api')
+          rewrite: (path) => path.replace(/^\/i-culture-api/, 'api')
         }
       },
     },
