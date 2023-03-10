@@ -23,7 +23,11 @@ watch(checked, (val) => {
           <van-switch v-model="checked" size="18px" />
         </template>
       </van-cell>
-      <van-cell title="源码" url="https://git.hayitech.com/infrastructure/mobile-scaffold/topop-vue" is-link />
+      <van-cell
+        title="源码"
+        url="https://git.hayitech.com/infrastructure/mobile-scaffold/topop-vue"
+        is-link
+      />
       <van-cell title="应用" to="apps/index" is-link />
     </van-cell-group>
     <MyTabbar />

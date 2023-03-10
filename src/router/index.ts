@@ -30,7 +30,7 @@ const router = createRouter({
       path: '/apps/short-video/down',
       name: 'shortVideoDown',
       component: () => import('@/views/apps/shortVideo/down.vue')
-    },
+    }
   ]
 })
 

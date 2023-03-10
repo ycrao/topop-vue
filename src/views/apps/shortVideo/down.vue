@@ -2,14 +2,12 @@
 import { ref } from 'vue'
 import { fetchShortVideo } from '@/api/shortVideo'
 import { useRouter } from 'vue-router'
-import { showDialog } from 'vant';
+import { showDialog } from 'vant'
 import { showFailToast } from 'vant'
 
 const downVideo = (url: string) => {
   // 解决 带有 referrer 403 问题
-  document
-    .querySelector('meta[name="referrer"]')
-    ?.setAttribute("content", "never");
+  document.querySelector('meta[name="referrer"]')?.setAttribute('content', 'never')
   const link = document.createElement('a')
   link.style.display = 'none'
   link.href = url
@@ -19,7 +17,9 @@ const downVideo = (url: string) => {
   document.body.removeChild(link)
 }
 
-const plainText = ref<string>('5.87 KJI:/ 复制打开抖音，看看【Ai会画画的作品】嫌前面的作品太闪眼睛了，弄个温和点的给大家润润眼😅... https://v.douyin.com/S9dwrHH/')
+const plainText = ref<string>(
+  '5.87 KJI:/ 复制打开抖音，看看【Ai会画画的作品】嫌前面的作品太闪眼睛了，弄个温和点的给大家润润眼😅... https://v.douyin.com/S9dwrHH/'
+)
 
 const router = useRouter()
 const onSubmit = () => {
@@ -27,11 +27,11 @@ const onSubmit = () => {
   const result = plainText.value.match(re)
   const url = result ? result[0] : null
   if (url != null) {
-    return fetchShortVideo(url).then(resp => {
+    return fetchShortVideo(url).then((resp) => {
       if (resp.code == 200) {
         let videoUrl = resp.url
-        if (videoUrl.startsWith("//")) {
-          videoUrl = "https:" + videoUrl
+        if (videoUrl.startsWith('//')) {
+          videoUrl = 'https:' + videoUrl
         }
         return downVideo(videoUrl)
         /*
@@ -70,12 +70,11 @@ const onClickLeft = () => {
             type="textarea"
             autosize
             label="分享文案"
-            placeholder="复制抖音、快手等短视频平台带有短链接的分享文案" />
+            placeholder="复制抖音、快手等短视频平台带有短链接的分享文案"
+          />
         </van-cell-group>
-        <div style="margin: 16px;">
-          <van-button round block type="primary" native-type="submit">
-            提交
-          </van-button>
+        <div style="margin: 16px">
+          <van-button round block type="primary" native-type="submit"> 提交 </van-button>
         </div>
       </van-form>
     </div>

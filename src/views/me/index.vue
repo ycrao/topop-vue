@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import MyTabbar from "@/components/MyTabbar.vue";
+import MyTabbar from '@/components/MyTabbar.vue'
 const router = useRouter()
 
 const onClickLeft = () => {

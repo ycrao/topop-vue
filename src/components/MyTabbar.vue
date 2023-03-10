@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { reactive, onMounted } from "vue";
-import type { ITabbarItem } from "../../types/app";
+import { reactive, onMounted } from 'vue'
+import type { ITabbarItem } from '../../types/app'
 
 // 由于引入 `van` 相关 `ui` 组件，`MyTabbar` 无法被常规测试（类似于 `HelloWorld` 组件一样）
 interface IState {
-  tabList: ITabbarItem[],
+  tabList: ITabbarItem[]
   active: number
 }
 const emit = defineEmits(['handleClickTabbar'])
@@ -46,20 +46,14 @@ onMounted(() => {
 })
 </script>
 <template>
-  <van-tabbar
-    v-model="state.active"
-    fixed
-    :route="false"
-    safe-area-inset-bottom
-    :z-index="99"
-  >
+  <van-tabbar v-model="state.active" fixed :route="false" safe-area-inset-bottom :z-index="99">
     <van-tabbar-item
       v-for="(item, index) in state.tabList"
       :key="index"
       replace
       :to="item.to"
       :icon="item.icon"
-      @click="handleClickTabbar({...item, index})"
+      @click="handleClickTabbar({ ...item, index })"
     >
       {{ item.name }}
     </van-tabbar-item>
