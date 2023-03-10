@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed, ref, watch, provide } from 'vue'
 import { useThemeStore } from '@/stores/theme'
+import type { ConfigProviderTheme } from "vant";
 
 const store = useThemeStore()
-const theme = ref<string>(store.theme)
+const theme = ref<ConfigProviderTheme>(store.theme)
+// const oTheme = ref<ConfigProviderTheme>('dark')
 const mode = computed(() => store.theme)
 
 watch(

@@ -18,6 +18,9 @@ pnpm i
 # DX
 pnpm dev
 
+# typescript check
+pnpm type-check
+
 # unit test
 pnpm test:unit
 # e2e test

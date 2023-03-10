@@ -2,7 +2,13 @@
 import { ref } from 'vue'
 import { fetchZhihuHot } from '@/api/zhihu'
 import { useRouter } from 'vue-router'
-const items = ref<object[]>([])
+interface Item {
+  readonly id: number,
+  readonly title: string,
+  readonly url: string,
+}
+
+const items = ref<Item[]>([])
 const loading = ref(false)
 const finished = ref(false)
 
