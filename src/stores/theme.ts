@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { LocalStorageCache } from '@/utils/cache'
-import type { ConfigProviderTheme } from "vant";
+import type { ConfigProviderTheme } from 'vant'
 
 export const useThemeStore = defineStore('theme', () => {
   const cache = new LocalStorageCache()

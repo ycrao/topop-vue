@@ -3,9 +3,9 @@ import { ref } from 'vue'
 import { fetchZhihuHot } from '@/api/zhihu'
 import { useRouter } from 'vue-router'
 interface Item {
-  readonly id: number,
-  readonly title: string,
-  readonly url: string,
+  readonly id: number
+  readonly title: string
+  readonly url: string
 }
 
 const items = ref<Item[]>([])
