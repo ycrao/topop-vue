@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Toast } from 'vant'
+import { showFailToast } from 'vant'
 
 const baseApiUrl = import.meta.env.VUE_APP_BASE_API_URL as string
 
@@ -27,17 +27,17 @@ request.interceptors.response.use(
     if (data.code && data.code !== 200) {
       if (data.code === 401) {
         // logout
-        Toast.fail('expired, plz re-login?')
+        showFailToast('expired, plz re-login?')
       } else if (data.code === 403) {
         // permission deny
-        Toast.fail('permission deny!')
+        showFailToast('permission deny!')
       }
     }
     return Promise.resolve(data)
   },
   (error) => {
     console.log('-----axios error:', error)
-    Toast.fail(error.message || 'error')
+    showFailToast(error.message || 'error')
     return Promise.reject(error)
   }
 )

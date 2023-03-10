@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import vue from '@vitejs/plugin-vue'
 import { viteMockServe } from "vite-plugin-mock"
+import { defineConfig } from "vitest/config";
 
 
 function packageEnv(mode: string, root: string) {
@@ -22,7 +23,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const root = process.cwd()
   const env = packageEnv(mode, root)
   const { VITE_APP_PROXY_API_TARGET, VITE_APP_BASE_API_URL } = env
-  return {
+  return defineConfig({
     plugins: [
       vue(),
       Components({
@@ -42,20 +43,20 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       }),
     ],
     // see: https://cn.vitejs.dev/config/server-options.html#server-proxy
-    /*
+
     server: {
       host: true,
       open: true,
       proxy: {
-        '/api': {
+        '/short-api': {
           // target: 'https://jsonplaceholder.typicode.com',
-          target: VITE_APP_PROXY_API_TARGET,
+          // target: VITE_APP_PROXY_API_TARGET,
+          target: 'https://api.iculture.cc',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: (path) => path.replace(/^\/short-api/, 'api')
         }
       },
     },
-     */
     // see: https://cn.vitejs.dev/config/preview-options.html
     /*
     preview: {
@@ -75,5 +76,5 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     }
-  }
+  })
 }

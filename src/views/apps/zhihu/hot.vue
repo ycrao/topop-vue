@@ -22,7 +22,7 @@ const onLoad = () => {
   })
 }
 const onClickLeft = () => {
-  router.push({ path: '/' })
+  router.push({ path: '/apps/index' })
 }
 </script>
 
@@ -47,6 +47,7 @@ const onClickLeft = () => {
         />
       </van-list>
     </div>
+    <MyTabbar :active="1" />
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useThemeStore } from '@/stores/theme'
+import MyTabbar from '@/components/MyTabbar.vue'
 
 const store = useThemeStore()
 const checked = ref<boolean>(store.theme === 'dark')
@@ -22,8 +23,10 @@ watch(checked, (val) => {
           <van-switch v-model="checked" size="18px" />
         </template>
       </van-cell>
-      <van-cell title="知乎热榜" to="zhihu/hot" is-link />
+      <van-cell title="源码" url="https://git.hayitech.com/infrastructure/mobile-scaffold/topop-vue" is-link />
+      <van-cell title="应用" to="apps/index" is-link />
     </van-cell-group>
+    <MyTabbar />
   </div>
 </template>
 

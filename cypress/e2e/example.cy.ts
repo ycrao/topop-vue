@@ -7,7 +7,7 @@ describe('My First Test', () => {
   })
 
   it('visits the zhihu hot app url', () => {
-    cy.visit('/zhihu/hot')
+    cy.visit('/apps/zhihu/hot')
     cy.intercept({
       method: 'GET',
       url: '/mock/api/news/zhihu',
