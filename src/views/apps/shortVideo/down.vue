@@ -36,16 +36,6 @@ const onSubmit = () => {
           videoUrl = 'https:' + videoUrl
         }
         return downVideo(videoUrl)
-        /*
-        showDialog({
-          title: '提示',
-          message: '由于浏览器限制，请右键复制<a href="' + videoUrl + '">视频地址</a>在浏览器新窗口打开播放或下载',
-          allowHtml: true
-        }).then(() => {
-          // on close
-        });
-         */
-        // return window.open(videoUrl, '_blank')
       } else {
         console.log(resp)
         return showFailToast('解析失败')
