@@ -41,5 +41,6 @@ watch(checked, (val) => {
   height: 100vh;
   padding-top: 30px;
   position: relative;
+  background-color: var(--van-background);
 }
 </style>

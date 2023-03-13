@@ -2,16 +2,18 @@
 import { ref } from 'vue'
 import { fetchShortVideo } from '@/api/shortVideo'
 import { useRouter } from 'vue-router'
-import { showDialog } from 'vant'
 import { showFailToast } from 'vant'
 
 const downVideo = (url: string) => {
-  // 解决 带有 referrer 403 问题
-  document.querySelector('meta[name="referrer"]')?.setAttribute('content', 'never')
+  // 解决 带有 referrer 403 问题 （全局办法）
+  // document.querySelector('meta[name="referrer"]')?.setAttribute('content', 'never')
   const link = document.createElement('a')
   link.style.display = 'none'
   link.href = url
-  link.setAttribute('download', 'video' + Date.now())
+  link.setAttribute('download', '')
+  link.setAttribute('target', '_blank')
+  // 解决 带有 referrer 403 问题 （局部方法）可以避免 referrer 泄露隐私与额外攻击
+  link.setAttribute('rel', 'noreferrer noopener')
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
@@ -43,7 +45,7 @@ const onSubmit = () => {
           // on close
         });
          */
-        // window.open(videoUrl, '_blank')
+        // return window.open(videoUrl, '_blank')
       } else {
         console.log(resp)
         return showFailToast('解析失败')
@@ -84,18 +86,18 @@ const onClickLeft = () => {
 </template>
 
 <style lang="less" scoped>
+/*
 :deep(body) {
   background-color: var(--van-background) !important;
 }
-:deep(.contentContainer) {
-  background-color: var(--van-background) !important;
-}
+ */
 .container {
   margin: 0 auto;
   min-width: 320px;
   width: 100vw;
   height: 100vh;
   position: relative;
+  background-color: var(--van-background);
 }
 .contentContainer {
   padding-top: 30px;

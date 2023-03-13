@@ -52,14 +52,12 @@ const onClickLeft = () => {
 </template>
 
 <style lang="less" scoped>
-:deep(body) {
-  background-color: var(--van-background) !important;
-}
 .container {
   margin: 0 auto;
   min-width: 320px;
   width: 100vw;
   height: 100vh;
   position: relative;
+  background-color: var(--van-background);
 }
 </style>
