@@ -25,7 +25,7 @@ watch(checked, (val) => {
       </van-cell>
       <van-cell
         title="源码"
-        url="https://git.hayitech.com/infrastructure/mobile-scaffold/topop-vue"
+        url="https://github.com/ycrao/topop-vue"
         is-link
       />
       <van-cell title="应用" to="apps/index" is-link />

@@ -29,15 +29,14 @@ const onSubmit = () => {
   const result = plainText.value.match(re)
   const url = result ? result[0] : null
   if (url != null) {
-    return fetchShortVideo(url).then((resp) => {
+    fetchShortVideo(url).then((resp) => {
       if (resp.code == 200) {
-        let videoUrl = resp.url
-        if (videoUrl.startsWith('//')) {
-          videoUrl = 'https:' + videoUrl
+        const videoUrl = resp.url || ''
+        if (videoUrl != '') {
+          let videoDownloadUrl = videoUrl.startsWith('//') ? 'https:' + videoUrl: videoUrl
+          return downVideo(videoDownloadUrl)
         }
-        return downVideo(videoUrl)
       } else {
-        console.log(resp)
         return showFailToast('解析失败')
       }
     })
