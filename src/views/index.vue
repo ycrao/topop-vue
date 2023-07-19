@@ -23,11 +23,7 @@ watch(checked, (val) => {
           <van-switch v-model="checked" size="18px" />
         </template>
       </van-cell>
-      <van-cell
-        title="源码"
-        url="https://github.com/ycrao/topop-vue"
-        is-link
-      />
+      <van-cell title="源码" url="https://github.com/ycrao/topop-vue" is-link />
       <van-cell title="应用" to="apps/index" is-link />
     </van-cell-group>
     <MyTabbar />

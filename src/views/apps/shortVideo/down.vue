@@ -33,7 +33,7 @@ const onSubmit = () => {
       if (resp.code == 200) {
         const videoUrl = resp.url || ''
         if (videoUrl != '') {
-          let videoDownloadUrl = videoUrl.startsWith('//') ? 'https:' + videoUrl: videoUrl
+          let videoDownloadUrl = videoUrl.startsWith('//') ? 'https:' + videoUrl : videoUrl
           return downVideo(videoDownloadUrl)
         }
       } else {
