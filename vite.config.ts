@@ -51,7 +51,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         '/i-culture-api': {
           // target: 'https://jsonplaceholder.typicode.com',
           // target: VITE_APP_PROXY_API_TARGET,
-          target: 'https://api.iculture.cc',
+          target: 'https://api.iculture.cc' || VITE_APP_PROXY_API_TARGET || VITE_APP_BASE_API_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/i-culture-api/, 'api')
         }

@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
-import { mergeConfig } from 'vite'
+// import { mergeConfig } from 'vite'
 import { configDefaults, defineConfig } from "vitest/config";
-import userConfigExport from './vite.config'
+// import userConfigExport from './vite.config'
 import vue from '@vitejs/plugin-vue'
 
 /*

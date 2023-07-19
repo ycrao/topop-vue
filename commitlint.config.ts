@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // @ts-ignore
-import { types, scopes } from './.cz-config'
+import { types /*, scopes*/ } from './.cz-config'
 
 const Configuration = {
   /*
